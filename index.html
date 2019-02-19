@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="banner">
+        <div class="carousel" @mouseenter="enter" @mouseleave="leave">
+            <transition-group tag="ul" name="image" enter-active-class="animated fadeIn">
+                <li v-for='(image,index) in img' :key='index' v-show="index === mark">
+                    <a href="javascript:;">
+                        <img :src="image">
+                    </a>
+                </li>
+            </transition-group>
+        
+            <div class="bullet">
+                <span v-for="(item,index) in img.length" :class="{'active':index === mark}"
+                    @click="change(index)" :key="index"></span>
+            </div>
+            <div class="switch">
+                <div class="prev" @click="prev()"><img src="img/prev.png" alt="上一张"></div>
+                <div class="next" @click="next()"><img src="img/next.png" alt="下一张"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/banner.js"></script>
+</body>
+</html>
