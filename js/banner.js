@@ -25,7 +25,7 @@
             prev() {
                 this.mark--;
                 if (this.mark === -1) {
-                    // this.img.length是图片的个数
+                    // this.img.length是图片的总个数
                     this.mark = this.img.length-1;
                     return
                 }
