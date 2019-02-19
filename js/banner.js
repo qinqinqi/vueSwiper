@@ -25,20 +25,21 @@
             prev() {
                 this.mark--;
                 if (this.mark === -1) {
-                    this.mark = 3;
+                    // this.img.length是图片的个数
+                    this.mark = this.img.length-1;
                     return
                 }
             },
             next() {
                 this.mark++;
-                if (this.mark === 4) {
+                if (this.mark === this.img.length) {
                     this.mark = 0;
                     return
                 }
             },
             autoPlay() {
                 this.mark++;
-                if (this.mark === 4) {
+                if (this.mark === this.img.length) {
                     this.mark = 0;
                     return
                 }
@@ -54,7 +55,7 @@
             }
         },
         created() {
-            this.play()
+            this.play();
         }
     })
 }
